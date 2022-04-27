@@ -28,9 +28,9 @@ ADD reference_test_results.tar.gz /.assests/faces_output/
 #COPY resnetd18.pth /.semantic-segmentation/checkpoints/backbones/
 RUN wget https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/resnetd18.pth -P /.checkpoints/backbones/
 #COPY SFNet_18_HELEN_61_0.pth /.checkpoints/checkpoints/
-RUN wget https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth -P /.checkpoints/checkpoints/
-COPY config.yaml .
-COPY test.py .
+RUN wget https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth -P /.checkpoints/pretrained/
+#COPY config.yaml .
+#COPY test.py .
 CMD ["python3", "test.py"]
 
 
