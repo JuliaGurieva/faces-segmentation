@@ -106,18 +106,11 @@ if __name__ == '__main__':
     #reference:
     print()
     print('Matching the results:')
-    #diff = 0
     flags = True
     if test_file.is_file():
         ref = cv2.imread(ref_dir / test_file)
         result = cv2.imread(save_dir / test_file)
         flags = flags and (hash(ref.tobytes()) == hash(result.tobytes()))
-        '''
-        for i in range(ref.shape[0]):
-            for j in range(ref.shape[1]):
-                diff += np.abs(ref[i][j] - result[i][j])
-        print('difference: ', diff)
-        '''
     else:
         files = test_file.glob('*.*')
         for file in files:
@@ -129,11 +122,5 @@ if __name__ == '__main__':
                 print(f" image {str(file.stem)}.png: results are equal")
             else:
                 print(f" image {str(file.stem)}.png: results are not equal")
-            '''
-            for i in range(ref.shape[0]):
-                for j in range(ref.shape[1]):
-                    diff += np.abs(ref[i][j] - result[i][j])
-            print('difference: ', sum(diff))
-            '''
     if flags is True:
         print('Ok!')
