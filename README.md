@@ -8,14 +8,13 @@
 # Инструкция к запуску теста
 1) Клонировать репозиторий
 ```bash
-$ git clone https://github.com/JuliaGurieva/Faces_segmentation_example.git
+$ git clone https://github.com/JuliaGurieva/faces-segmentation.git
 ```
 ```bash
 $ cd Faces_segmentation_example
 ```
 2) Скачать модель
-* файл по ссылке https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth поместить в папку checkpoints/pretrained
-* файл по ссылке https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/resnetd18.pth поместить в папку checkpoints/backbones
+* файл по ссылке https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth поместить в папку c проектом
 3) Собрать и запустить докер:
 ```bash
 $ docker build -t test .
@@ -28,11 +27,13 @@ $ docker run test
 ```bash
 $ docker ps -a
 ```
-Копировать папку с исходными изображениями (faces) и результатами в <your path>:
+Копировать папку с исходными изображениями (faces) и результатами в your_path:
 ```bash
-$ docker cp <ID>:assests/faces <your path>
-$ docker cp <ID>:assests/faces_output <your path>
+$ docker cp ID:assests/faces your_path
+$ docker cp ID:assests/test_results your_path
+$ docker cp ID:assests/reference_test_results your_path
 ```
-В папке your path/faces хранятся исходные изображения, которые обрабатывались скриптом test.py
-В папке your path/faces_output есть папки reference_test_results (получены в моей системе) и test_results (получены при запуске контейнера).
-При запуске контейнера, после получения изображений в test results, было проведено сравнение изображений в двух папках.
+* В папке your_path/faces хранятся исходные изображения, которые обрабатывались скриптом test.py
+* В your_path/reference_test_results - результаты, полученные в моей системе
+* В your_path/test_results - результаты, полученные при запуске контейнера.
+При запуске контейнера получены изображения в test_results, и проведено сравнение изображений в двух папках.
