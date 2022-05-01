@@ -1,10 +1,10 @@
 DEVICE          : cpu              # device used for training and evaluation (cpu, cuda, cuda0, cuda1, ...)
-SAVE_DIR        : 'assests/faces_output'         # output folder name used for saving the model, logs and inference results
+SAVE_DIR        : 'assests'         # output folder name used for saving the model, logs and inference results
 
 MODEL:                                    
   NAME          : SFNet                                           # name of the model you are using
   BACKBONE      : ResNetD-18                                                  # model variant
-  PRETRAINED    : 'checkpoints/backbones/resnetd18.pth'       # backbone model's weight 
+  PRETRAINED    : 'resnetd18.pth'       # backbone model's weight 
 
 DATASET:
   NAME          : HELEN                                              # dataset name to be trained with (camvid, cityscapes, ade20k)
@@ -36,7 +36,7 @@ SCHEDULER:
   
 
 EVAL:
-  MODEL_PATH    : 'checkpoints/pretrained/SFNet_18_HELEN_61_0.pth'    # trained model file path
+  MODEL_PATH    : 'SFNet_18_HELEN_61_0.pth'    # trained model file path
   IMAGE_SIZE    : [512, 512]                          # evaluation image size in (h, w)                       
   MSF: 
     ENABLE      : false                               # multi-scale and flip evaluation  
@@ -45,7 +45,7 @@ EVAL:
 
 
 TEST:
-  MODEL_PATH    : 'checkpoints/pretrained/SFNet_18_HELEN_61_0.pth'    # trained model file path
+  MODEL_PATH    : 'SFNet_18_HELEN_61_0.pth'    # trained model file path
   FILE          : 'assests/faces'      # filename or foldername 
   IMAGE_SIZE    : [512, 512]                          # inference image size in (h, w)
   OVERLAY       : true                                # save the overlay result (image_alpha+label_alpha)
