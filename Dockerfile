@@ -7,7 +7,8 @@ RUN apt-get install -y git
 COPY setup.py .
 
 RUN pip install -e .
-RUN apt-get install -y python3-opencv
+#RUN apt-get install -y python3-opencv
+RUN pip install opencv-python
 RUN pip install torch
 RUN pip install torchvision
 
