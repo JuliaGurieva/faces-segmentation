@@ -8,30 +8,30 @@
 # Инструкция к запуску теста
 1) Клонировать репозиторий
 ```bash
-$ git clone https://github.com/JuliaGurieva/faces-segmentation.git
+ git clone https://github.com/JuliaGurieva/faces-segmentation.git
 ```
 ```bash
-$ cd Faces_segmentation_example
+ cd faces-segmentation
 ```
 2) Скачать модель
 * файл по ссылке https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth поместить в папку c проектом
 3) Собрать и запустить докер:
 ```bash
-$ docker build -t test .
+docker build -t test .
 ```
 ```bash
-$ docker run test
+docker run test
 ```
 4) Получить изображения из контейнера
 * найти ID контейнера:
 ```bash
-$ docker ps -a
+docker ps -a
 ```
 Копировать папку с исходными изображениями (faces) и результатами в your_path:
 ```bash
-$ docker cp ID:assests/faces your_path
-$ docker cp ID:assests/test_results your_path
-$ docker cp ID:assests/reference_test_results your_path
+docker cp ID:assests/faces your_path
+docker cp ID:assests/test_results your_path
+docker cp ID:assests/reference_test_results your_path
 ```
 * В папке your_path/faces хранятся исходные изображения, которые обрабатывались скриптом test.py
 * В your_path/reference_test_results - результаты, полученные в моей системе
