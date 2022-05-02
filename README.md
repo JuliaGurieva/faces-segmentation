@@ -14,8 +14,8 @@
  cd faces-segmentation
 ```
 2) Скачать модель
-* файл по ссылке https://drive.google.com/drive/folders/1tbke2oezCMdbB33Huco_T6MoAmAljW2X?usp=sharing/SFNet_18_HELEN_61_0.pth поместить в папку c проектом
-3) Собрать и запустить докер:
+* файл по ссылке https://drive.google.com/file/d/1jVQvGQG_aKVPSxXLQuO2fL5xfy-KBTpR/view?usp=sharing поместить в папку c проектом
+4) Собрать и запустить докер:
 ```bash
 docker build -t test .
 ```
@@ -30,7 +30,11 @@ docker ps -a
 Копировать папку с исходными изображениями (faces) и результатами в your_path:
 ```bash
 docker cp ID:assests/faces your_path
+```
+```bash
 docker cp ID:assests/test_results your_path
+```
+```bash
 docker cp ID:assests/reference_test_results your_path
 ```
 * В папке your_path/faces хранятся исходные изображения, которые обрабатывались скриптом test.py
