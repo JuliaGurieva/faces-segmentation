@@ -1,9 +1,9 @@
 FROM ubuntu:20.04
 RUN apt-get update
 RUN ln -fsn /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
-RUN apt-get install -y git
 COPY setup.py .
 
 RUN pip install -e .
