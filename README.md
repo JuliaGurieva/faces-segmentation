@@ -27,15 +27,15 @@ docker run test
 ```bash
 docker ps -a
 ```
-Копировать папку с исходными изображениями (faces) и результатами в your_path:
+Копировать папку с исходными изображениями (faces) и результатами в "your_path":
 ```bash
-docker cp ID:assests/faces your_path
+docker cp ID:assests/faces <your_path>
 ```
 ```bash
-docker cp ID:assests/test_results your_path
+docker cp ID:assests/test_results <your_path>
 ```
 ```bash
-docker cp ID:assests/reference_test_results your_path
+docker cp ID:assests/reference_test_results <your_path>
 ```
 * В папке your_path/faces хранятся исходные изображения, которые обрабатывались скриптом test.py
 * В your_path/reference_test_results - результаты, полученные в моей системе
